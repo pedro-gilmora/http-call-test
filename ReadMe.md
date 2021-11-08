@@ -1,5 +1,9 @@
 # 🧪 HTTP-Call test project
 
+## Tech
+ - [![Vite](https://raw.githubusercontent.com/aleen42/badges/master/src/vitejs.svg)](https://vitejs.dev)
+ - [![Vite](https://raw.githubusercontent.com/aleen42/badges/master/src/typescript.svg)](https://vitejs.dev)
+
 ## Run
 Install **PNPM**  
 `npm i -g pnpm`  
