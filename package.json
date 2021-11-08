@@ -1,0 +1,16 @@
+{
+  "name": "vite-typescript-starter",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@pedro.gilmora/http-call":"^1.0.7"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "vite": "^2.6.13"
+  }
+}
