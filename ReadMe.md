@@ -1,6 +1,6 @@
 # 🧪 HTTP-Call test project
 
-## Tech
+## Test techs
  - [![Vite](https://raw.githubusercontent.com/aleen42/badges/master/src/vitejs.svg)](https://vitejs.dev)
  - [![Vite](https://raw.githubusercontent.com/aleen42/badges/master/src/typescript.svg)](https://vitejs.dev)
 
