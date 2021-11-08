@@ -3,7 +3,7 @@ import './style.css'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
-app.innerHTML = `<img src="src/assets/code.png" style="float: left"/>
+app.innerHTML = `<img src="src/assets/code.png" style="float: left; margin-right: 8px"/>
   <b>HTTP-Call Project</b>
 `;
 
@@ -22,29 +22,31 @@ const user = {id:0, name: 'admin'} as User;
 (async () =>{
   let post = await $endpointBase[1].get(undefined, {
     onSend({url}){
-      app.innerHTML += `<br/>
-    <pre>GET: <code>${url}</code></pre>
+      app.innerHTML += `<hr/>
+    <pre><b>GET:</b> <code>${url}</code></pre>
   `
     },
     transform(post: Post){
       return Object.assign(post, {user}) as UserPost;
     }
   });
-  app.innerHTML += `<br/>
-  <pre><code>${JSON.stringify(post, null, 2)}</code></pre>
+  app.innerHTML += `
+  <pre><b>Result:</b> <code>${JSON.stringify(post, null, 2)}</code></pre>
 `;
-
-  post = await $endpointBase.post({title: 'New title'}, {
+  const newPost = {title: 'New title'};
+  post = await $endpointBase.post(newPost, {
     onSend({url}){
-      app.innerHTML += `<br/>
-  <pre>POST: <code>${url}</code></pre>
+      app.innerHTML += `<hr/>
+  <pre><b>POST:</b> <code>${url}</code>
+
+<b>Payload:</b> ${JSON.stringify(newPost, null, 2)}
+</pre>
 `
     },
     transform(post: Post){
       return Object.assign(post, {user}) as UserPost;
     }
   });
-  app.innerHTML += `<br/>
-  <pre><code>${JSON.stringify(post, null, 2)}</code></pre>
+  app.innerHTML += `<pre><b>Result:</b><code>${JSON.stringify(post, null, 2)}</code></pre>
 `;
 })().then()
